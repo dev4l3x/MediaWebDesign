@@ -4,9 +4,36 @@
         <meta charset="UTF-8">
         <title>Alberto</title>
         {% load static %}
+
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.6/dist/css/uikit.min.css" />
+
+        <!-- UIkit JS -->
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.6/dist/js/uikit.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.6/dist/js/uikit-icons.min.js"></script>
+
         <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+
+
     </head>
     <body>
+
         <div class="foreground"></div>
+        <div class="uk-container">
+            <div class="uk-navbar-container uk-navbar-transparent uk-light" uk-navbar>
+                <ul class="uk-navbar-nav uk-navbar-center">
+                    <li class="uk-active"><a href="">INICIO</a></li>
+                    <li><a href="">FOTOS</a></li>
+                    <li><a href="">VIDEOS</a></li>
+                </ul>
+            </div>
+
+            <h1 style="font-size: 3em" class="uk-text-center uk-light">Alberto</h1>
+            <p class="uk-text-small uk-text-justify uk-width-1-2@s" style="margin: auto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+        </div>
+
+
+
     </body>
 </html>
