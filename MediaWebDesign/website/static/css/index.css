@@ -18,3 +18,14 @@ html{
     opacity: 0.8;
     z-index: -1;
 }
+
+.social_link{
+    color: white;
+    font-size: 2em;
+    opacity: 50%;
+}
+
+.social_link:hover{
+    opacity: 100%;
+    color: white;
+}

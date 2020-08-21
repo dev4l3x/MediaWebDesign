@@ -1,0 +1,68 @@
+
+{% extends "index.html" %}
+
+{% block content %}
+
+
+            <h1 style="font-size: 3em" class="uk-text-center uk-light">Alberto</h1>
+            <p class="uk-text-small uk-text-justify uk-width-1-2@m" style="margin: auto">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+            <h3 class="uk-light uk-text-center" style="margin-bottom: 5px">MIS SERVICIOS</h3>
+            <div style="background: white; width: 60px; height: 2px; margin: auto"></div>
+
+            {% if services %}
+
+                <div class="uk-child-width-1-3@m uk-margin uk-text-center uk-light" uk-grid>
+
+                    {% for service in services %}
+                        <div>
+                            <div style="border: 5px solid white; padding: 20px;" class="uk-card uk-card-body uk-text-emphasis">
+                                <p style="font-size: 3em">{{ service.icon.as_html }}</p>
+                                <p style="margin-bottom: 5p">{{ service.title }}</p>
+                                <div style="background: white; width: 60px; height: 2px; margin: auto"></div>
+                                <p class="uk-text-justify">{{ service.description }}</p>
+                                <h2>{{ service.price }}€</h2>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+            {% endif %}
+
+            <h3 class="uk-light uk-text-center" style="margin-bottom: 5px">CONTÁCTAME</h3>
+            <div style="background: white; width: 60px; height: 2px; margin: auto"></div>
+
+            <form style="margin-top: 30px; margin-bottom: 30px" class="uk-container uk-width-1-2@s">
+                <fieldset class="uk-fieldset">
+                    <div class="uk-margin">
+                        <input type="text" class="uk-input" placeholder="Nombre">
+                    </div>
+                    <div class="uk-margin">
+                        <input type="text" class="uk-input" placeholder="Email">
+                    </div>
+                    <div class="uk-margin">
+                        <select type="text" class="uk-select" placeholder="Motivo">
+                            <option>Otro</option>
+                        </select>
+                    </div>
+                    <div class="uk-margin">
+                        <textarea type="text" class="uk-textarea uk-height-small" placeholder="Mensaje"></textarea>
+                    </div>
+
+                    <div class="uk-text-center">
+                        <input type="submit" class="uk-button uk-button-default uk-light" value="ENVIAR"/>
+                    </div>
+
+                </fieldset>
+            </form>
+
+            {% if networks %}
+                <div class="uk-container uk-text-center uk-margin-bottom">
+                    {% for network in networks %}
+                        <a class="social_link uk-margin-right" target="_blank" href="{{ network.link }}">{{ network.icon.as_html }}</a>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+{% endblock %}
