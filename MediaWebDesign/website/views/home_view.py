@@ -5,7 +5,7 @@ from website.models import Service, SocialNetwork
 
 
 def index(request):
-    template = loader.get_template('about.html')
+    template = loader.get_template('home.html')
     services = Service.objects.all()
     social_networks = SocialNetwork.objects.all()
     context = {

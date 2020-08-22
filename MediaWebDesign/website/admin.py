@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Language, Video, Image, Service, SocialNetwork, ServiceTranslate
+from .models import Language, Video, Image, Service, SocialNetwork, ServiceTranslate, VideoTranslate
 
 # Register your models here.
 admin.site.register(Language)
@@ -8,3 +8,4 @@ admin.site.register(Image)
 admin.site.register(SocialNetwork)
 admin.site.register(Service)
 admin.site.register(ServiceTranslate)
+admin.site.register(VideoTranslate)

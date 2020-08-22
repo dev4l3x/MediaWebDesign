@@ -1,4 +1,26 @@
 {% extends "index.html" %}
 {% block content %}
 
+
+    {% if videos %}
+        <h3 class="uk-light uk-text-center uk-margin-large-top" style="margin-bottom: 5px">VÍDEOS</h3>
+        <div style="background: white; width: 60px; height: 2px; margin: auto " class="uk-margin-medium-bottom"></div>
+
+
+        <div class="uk-child-width-1-3@l uk-child-width-1-2@m uk-margin-top uk-text-center uk-light uk-flex-center" style="margin-top: 20px" uk-grid>
+
+            {% for video in videos %}
+                <div class="uk-width-auto">
+                    <div style="border: 4px solid white; padding: 20px;" class="uk-card uk-card-body uk-text-emphasis">
+                         <iframe width="270" height="158" style="border: 4px solid white"
+                            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0">
+                            </iframe>
+
+                        <h4 style="margin-top: 10px; margin-bottom: 0">Titulo</h4>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    {% endif %}
 {% endblock %}
