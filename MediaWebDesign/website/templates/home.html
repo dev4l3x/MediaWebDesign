@@ -13,14 +13,46 @@
                 <div class="uk-width-auto">
                     <div style="border: 4px solid white; padding: 20px;" class="uk-card uk-card-body uk-text-emphasis">
                          <iframe width="270" height="158" style="border: 4px solid white"
-                            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0">
+                            src="{{ video.link }}" allowfullscreen>
                             </iframe>
 
-                        <h4 style="margin-top: 10px; margin-bottom: 0">Titulo</h4>
+                        <h4 style="margin-top: 10px; margin-bottom: 0">{{ video.title }}</h4>
                     </div>
                 </div>
             {% endfor %}
 
         </div>
+        <div class="uk-container uk-text-center uk-margin-bottom uk-light uk-margin-top">
+            <h5 style="display: inline; vertical-align: middle" class="uk-margin-ri">Ver más en </h5>
+            <a class="social_link uk-margin-right" target="_blank" style="vertical-align: middle"><i class="fab fa-youtube"></i></a>
+        </div>
     {% endif %}
+    {% if photos %}
+        <h3 class="uk-light uk-text-center uk-margin-large-top" style="margin-bottom: 5px">IMÁGENES</h3>
+        <div style="background: white; width: 60px; height: 2px; margin: auto " class="uk-margin-medium-bottom"></div>
+
+
+        <div class="uk-child-width-1-3@l uk-child-width-1-2@m uk-margin-top uk-text-center uk-light uk-flex-center" style="margin-top: 20px" uk-grid>
+            {% for photo in photos %}
+                <div class="uk-width-auto">
+                    <div style="border: 4px solid white; padding: 20px;" class="uk-card uk-card-body uk-text-emphasis">
+                        <img style="border: 4px solid white" src="{{ photo.source.url }}" width="320" height="180" >
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="uk-container uk-text-center uk-margin-bottom uk-light uk-margin-top">
+            <button class="uk-button uk-button-default uk-margin-top">VER MÁS</button>
+        </div>
+
+    {% endif %}
+
+        {% if networks %}
+            <div class="uk-container uk-text-center uk-margin-bottom">
+                {% for network in networks %}
+                    <a class="social_link uk-margin-right" target="_blank" href="{{ network.link }}">{{ network.icon.as_html }}</a>
+                {% endfor %}
+            </div>
+        {% endif %}
 {% endblock %}
