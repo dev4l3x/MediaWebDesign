@@ -1,9 +1,8 @@
 from django.db import models
-
+from django.utils.html import mark_safe
 
 class Image(models.Model):
     source = models.ImageField(upload_to="images/")
-    include_portfolio = models.BooleanField(default=False)
     title = models.CharField(max_length=100, default="")
 
     def __str__(self):
@@ -16,3 +15,9 @@ class Image(models.Model):
         super(Image, self).delete(*args, **kwargs)
         # Delete the file after the model
         storage.delete(path)
+
+    @property
+    def thumbnail_preview(self):
+        if self.source:
+            return mark_safe('<img src="{}" width="400" height="400" />'.format(self.source.url))
+        return ""

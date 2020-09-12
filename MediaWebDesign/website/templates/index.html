@@ -19,16 +19,28 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <!-- jQuery -->
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" type="text/javascript"></script>
+
+            <!-- nanogallery2 -->
+            <link  href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
+            <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
     </head>
     <body>
-        <div class="uk-height-large uk-background-cover uk-light uk-flex uk-flex-top background">
-            <div class="foreground"></div>
-        <div class="uk-container">
+        <div class="uk-background-cover uk-light uk-flex uk-flex-top background">
+        <div class="foreground"></div>
+        <div class="uk-container" style="z-index: 1">
             <div class="uk-navbar-container uk-navbar-transparent uk-light" uk-navbar>
                 <ul class="uk-navbar-nav uk-navbar-center">
-                    <li class=""><a href="">INICIO</a></li>
-                    <li><a href="">FOTOS</a></li>
-                    <li class="uk-active"><a href="">SOBRE MÍ</a></li>
+                    {% if active == 0 %}
+                        <li class="uk-active"><a href="/">INICIO</a></li>
+                        <li><a href="/gallery" target="_blank">FOTOS</a></li>
+                        <li class=""><a href="/about">SOBRE MÍ</a></li>
+                    {% else %}
+                        <li class=""><a href="/">INICIO</a></li>
+                        <li><a href="/gallery" target="_blank">FOTOS</a></li>
+                        <li class="uk-active"><a href="/about">SOBRE MÍ</a></li>
+                    {% endif %}
                     <li>
                         <a href="#"><i class="fas fa-globe-europe"></i></a>
                         <div class="uk-navbar-dropdown">

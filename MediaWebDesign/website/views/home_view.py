@@ -6,14 +6,46 @@ from website.models import Service, SocialNetwork, Video, Image
 
 def index(request):
     template = loader.get_template('home.html')
-    services = Service.objects.all()
     social_networks = SocialNetwork.objects.all()
     videos = Video.objects.all()
     photos = Image.objects.all()
     context = {
         'photos': photos,
         'videos': videos,
-        'services': services,
-        'networks': social_networks
+        'networks': social_networks,
+        'active': 0
     }
+    return HttpResponse(template.render(context, request))
+
+
+def about(request):
+    template = loader.get_template('about.html')
+    services = Service.objects.all()
+    social_networks = SocialNetwork.objects.all()
+
+    context = {
+        'networks': social_networks,
+        'service': services,
+        'active': 2
+    }
+
+    return HttpResponse(template.render(context, request))
+
+
+def contact(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        reason = request.POST.get('reason')
+        message = request.POST.get('message')
+        email = request.POST.get('email')
+
+
+def gallery(request):
+    template = loader.get_template('gallery.html')
+
+    images = Image.objects.all()
+    context = {
+        'images': images
+    }
+
     return HttpResponse(template.render(context, request))

@@ -24,7 +24,7 @@
         </div>
         <div class="uk-container uk-text-center uk-margin-bottom uk-light uk-margin-top">
             <h5 style="display: inline; vertical-align: middle" class="uk-margin-ri">Ver más en </h5>
-            <a class="social_link uk-margin-right" target="_blank" style="vertical-align: middle"><i class="fab fa-youtube"></i></a>
+            <a class="social_link uk-margin-right" target="_blank" style="vertical-align: middle" href="https://www.youtube.com/channel/UCWySpCerULfx_Pq72eQtjIg"><i class="fab fa-youtube"></i></a>
         </div>
     {% endif %}
     {% if photos %}
@@ -36,7 +36,7 @@
             {% for photo in photos %}
                 <div class="uk-width-auto">
                     <div style="border: 4px solid white; padding: 20px;" class="uk-card uk-card-body uk-text-emphasis">
-                        <img style="border: 4px solid white" src="{{ photo.source.url }}" width="320" height="180" >
+                        <img style="border: 4px solid white; object-fit:cover; width: 320px; height: 180px" src="{{ photo.source.url }}" >
                     </div>
                 </div>
             {% endfor %}

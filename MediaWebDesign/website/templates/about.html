@@ -32,21 +32,21 @@
             <h3 class="uk-light uk-text-center" style="margin-bottom: 5px">CONTÁCTAME</h3>
             <div style="background: white; width: 60px; height: 2px; margin: auto"></div>
 
-            <form style="margin-top: 30px; margin-bottom: 30px" class="uk-container uk-width-1-2@s">
+            <form style="margin-top: 30px; margin-bottom: 30px" class="uk-container uk-width-1-2@s" method="post" action="/contact">
                 <fieldset class="uk-fieldset">
                     <div class="uk-margin">
-                        <input type="text" class="uk-input" placeholder="Nombre">
+                        <input type="text" class="uk-input" placeholder="Nombre" name="name">
                     </div>
                     <div class="uk-margin">
-                        <input type="text" class="uk-input" placeholder="Email">
+                        <input type="text" class="uk-input" placeholder="Email" name="email">
                     </div>
                     <div class="uk-margin">
-                        <select type="text" class="uk-select" placeholder="Motivo">
+                        <select type="text" class="uk-select" placeholder="Motivo" name="reason">
                             <option>Otro</option>
                         </select>
                     </div>
                     <div class="uk-margin">
-                        <textarea type="text" class="uk-textarea uk-height-small" placeholder="Mensaje"></textarea>
+                        <textarea type="text" class="uk-textarea uk-height-small" placeholder="Mensaje" name="message"></textarea>
                     </div>
 
                     <div class="uk-text-center">
