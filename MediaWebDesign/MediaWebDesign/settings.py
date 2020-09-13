@@ -38,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'fontawesome_5'
+    'fontawesome_5',
+    'dynamic_preferences',
+    # comment the following line if you don't want to use user preferences
+    # 'dynamic_preferences.users.apps.UserPreferencesConfig',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +67,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
+                'dynamic_preferences.processors.global_preferences',
             ],
         },
     },

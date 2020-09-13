@@ -33,6 +33,7 @@
             <div style="background: white; width: 60px; height: 2px; margin: auto"></div>
 
             <form style="margin-top: 30px; margin-bottom: 30px" class="uk-container uk-width-1-2@s" method="post" action="/contact">
+                {% csrf_token %}
                 <fieldset class="uk-fieldset">
                     <div class="uk-margin">
                         <input type="text" class="uk-input" placeholder="Nombre" name="name">

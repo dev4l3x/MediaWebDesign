@@ -40,6 +40,8 @@ def contact(request):
         email = request.POST.get('email')
 
 
+
+
 def gallery(request):
     template = loader.get_template('gallery.html')
 
