@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Language, Video, Image, Service, SocialNetwork, ServiceTranslate, VideoTranslate
+from .models import Language, Video, Image, Service, SocialNetwork, ServiceTranslate, VideoTranslate, PortfolioImage
 
 
 class ImageAdmin(admin.ModelAdmin):
@@ -21,3 +21,4 @@ admin.site.register(SocialNetwork)
 admin.site.register(Service)
 admin.site.register(ServiceTranslate)
 admin.site.register(VideoTranslate)
+admin.site.register(PortfolioImage, ImageAdmin)

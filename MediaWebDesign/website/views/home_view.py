@@ -1,14 +1,14 @@
 from django.http import HttpResponse
 from django.views import View
 from django.template import loader
-from website.models import Service, SocialNetwork, Video, Image
+from website.models import Service, SocialNetwork, Video, Image, PortfolioImage
 
 
 def index(request):
     template = loader.get_template('home.html')
     social_networks = SocialNetwork.objects.all()
     videos = Video.objects.all()
-    photos = Image.objects.all()
+    photos = PortfolioImage.objects.all()
     context = {
         'photos': photos,
         'videos': videos,
@@ -25,7 +25,7 @@ def about(request):
 
     context = {
         'networks': social_networks,
-        'service': services,
+        'services': services,
         'active': 2
     }
 
