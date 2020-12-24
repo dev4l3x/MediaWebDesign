@@ -8,7 +8,7 @@ class Service(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     demo_video = models.CharField(max_length=255, default="", blank=True)
-    price = models.CharField(max_length=20)
+    price = models.CharField(max_length=20, blank=True, default="")
 
     def __str__(self):
         return self.title
@@ -16,6 +16,10 @@ class Service(models.Model):
     @property
     def has_video(self):
         return self.demo_video != ""
+    
+    @property
+    def has_price(self):
+        return self.price != ""
 
 
 

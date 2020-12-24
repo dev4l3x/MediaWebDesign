@@ -1,12 +1,15 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
     <head>
         <meta charset="UTF-8">
         <title>Alberto</title>
-        {% load static %}
         {% load fontawesome_5 %}
 
         {% fontawesome_5_static %}
+
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
         <!-- UIkit CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.6/dist/css/uikit.min.css" />
@@ -25,22 +28,42 @@
             <!-- nanogallery2 -->
             <link  href="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/css/nanogallery2.min.css" rel="stylesheet" type="text/css">
             <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
+
+        <style>
+            html {
+                background-image: url('media/{{ global_preferences.general__Background }}');
+            }
+        </style>
     </head>
     <body>
-        <div class="uk-background-cover uk-light uk-flex uk-flex-top background">
+        <script>
+            AOS.init();
+        </script>
         <div class="foreground"></div>
-        <div class="uk-container uk-width-expand" style="z-index: 1">
-            <div class="uk-navbar-container uk-navbar-transparent uk-light" uk-navbar>
+        <div class="uk-container uk-width-expand uk-light" style="z-index: 1">
+            
+            <div class="uk-navbar-container uk-navbar-transparent mobile-nav" uk-navbar>
+                <div class="uk-navbar-right">
+                    <a class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle="target: #mobile-menu"></a>
+                </div>
+                
+            </div>
+
+            <ul class="uk-nav uk-animation-slide-right uk-nav-center mobile-nav" id="mobile-menu">
+                <li class="uk-active"><a href="/">INICIO</a></li>
+                    <li class=""><a href="#services">SERVICIOS</a></li>
+                    <li class=""><a href="#contact">CONTACTO</a></li>
+                    <li><a href="/gallery" target="_blank">FOTOS</a></li>
+            </ul>
+            
+                      
+            <div class="uk-navbar-container uk-navbar-transparent uk-light desktop-nav" uk-navbar>
                 <ul class="uk-navbar-nav uk-navbar-center">
-                    {% if active == 0 %}
                         <li class="uk-active"><a href="/">INICIO</a></li>
+                        <li class=""><a href="#services">SERVICIOS</a></li>
+                        <li class=""><a href="#contact">CONTACTO</a></li>
                         <li><a href="/gallery" target="_blank">FOTOS</a></li>
-                        <li class=""><a href="/about">SOBRE MÍ</a></li>
-                    {% else %}
-                        <li class=""><a href="/">INICIO</a></li>
-                        <li><a href="/gallery" target="_blank">FOTOS</a></li>
-                        <li class="uk-active"><a href="/about">SOBRE MÍ</a></li>
-                    {% endif %}
+                        
                     <!--<li>
                         <a href="#"><i class="fas fa-globe-europe"></i></a>
                         <div class="uk-navbar-dropdown">
@@ -52,8 +75,8 @@
                     </li>-->
                 </ul>
             </div>
-            <h1 style="font-size: 3em" class="uk-text-center uk-light">Alberto</h1>
-            <p class="uk-text-small uk-text-justify uk-width-1-2@m" style="margin: auto">{{ global_preferences.general__Description }}</p>
+            <h1 style="font-size: 3em" class="uk-text-center uk-light" data-aos="fade-left" data-aos-duration="1000">Alberto</h1>
+            <p  data-aos="zoom-in" class="uk-text-small uk-text-justify uk-width-1-2@m" style="margin: auto" data-aos-duration="1000">{{ global_preferences.general__Description }}</p>
             {% block content %}
 
             {% endblock %}
