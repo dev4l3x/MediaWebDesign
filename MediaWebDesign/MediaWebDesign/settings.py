@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'fontawesome_5',
     'dynamic_preferences',
+    'django_cleanup.apps.CleanupConfig',
     # comment the following line if you don't want to use user preferences
     # 'dynamic_preferences.users.apps.UserPreferencesConfig',
 ]

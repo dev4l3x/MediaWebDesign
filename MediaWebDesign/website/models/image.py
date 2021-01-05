@@ -34,7 +34,7 @@ class PortfolioImage(models.Model):
         # You have to prepare what you need before delete the model
         storage, path = self.source.storage, self.source.path
         # Delete the model before the file
-        super(Image, self).delete(*args, **kwargs)
+        super(PortfolioImage, self).delete(*args, **kwargs)
         # Delete the file after the model
         storage.delete(path)
 
