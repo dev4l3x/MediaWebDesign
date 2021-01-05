@@ -4,3 +4,5 @@ from .image import Image, PortfolioImage
 from .service import Service
 from .socialnetwork import SocialNetwork
 from .brand import Brand
+from .message import Message
+from .contact_reason import ContactReason

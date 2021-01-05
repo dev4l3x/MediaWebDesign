@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Language, Video, Image, Service, SocialNetwork, PortfolioImage, Brand
+from .models import Language, Video, Image, Service, SocialNetwork, PortfolioImage, Brand, Message, ContactReason
 
 
 class ImageAdmin(admin.ModelAdmin):
@@ -22,6 +22,17 @@ class BrandAdmin(admin.ModelAdmin):
     thumbnail_preview.short_description = 'Preview'
     thumbnail_preview.allow_tags = True
 
+
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ('name', 'reason', 'email', 'message')
+    readonly_fields = ('name', 'reason', 'email', 'message')
+
+    def thumbnail_preview(self, obj):
+        return obj.thumbnail_preview
+
+    thumbnail_preview.short_description = 'Preview'
+    thumbnail_preview.allow_tags = True
+
 # Register your models here.
 admin.site.register(Language)
 admin.site.register(Video)
@@ -32,3 +43,5 @@ admin.site.register(Service)
 # admin.site.register(VideoTranslate)
 admin.site.register(PortfolioImage, ImageAdmin)
 admin.site.register(Brand, BrandAdmin)
+admin.site.register(Message, MessageAdmin)
+admin.site.register(ContactReason)

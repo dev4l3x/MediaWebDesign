@@ -38,12 +38,19 @@ html {
     color: white;
 }
 
+.service{
+
+}
+
 @media(max-width: 600px){
     .desktop-nav{
         display: none;
     }
     .mobile-nav{
         display: grid;
+    }
+    .service {
+        display: inline-block;
     }
 }
 
