@@ -7,10 +7,10 @@
         <div style="background: white; width: 60px; height: 2px; margin: auto " class="uk-margin-medium-bottom"></div>
 
 
-        <div class="uk-child-width-1-4@l uk-child-width-1-3@m uk-child-width-1-1@s uk-margin-top uk-text-center uk-light uk-flex-center uk-width-expand" style="margin-top: 20px" uk-grid>
+        <div uk-scrollspy="target: > div; cls: uk-animation-scale-up; delay: 200" class="uk-child-width-1-4@l uk-child-width-1-3@m uk-child-width-1-1@s uk-margin-top uk-text-center uk-light uk-flex-center uk-width-expand" style="margin-top: 20px" uk-grid>
 
             {% for video in videos %}
-                <div data-aos="zoom-in" data-aos-duration="1500" >
+                <div>
                     <div style="border: 4px solid white; padding: 20px; display: inline-block" class="uk-card uk-card-body uk-text-emphasis">
                          <iframe style="border: 4px solid white; background-color: black;"  width="250" height="158"
                             src="{{ video.link }}" allowfullscreen>
@@ -34,7 +34,7 @@
 
         <div class="uk-child-width-1-3@l uk-child-width-1-2@m uk-child-width-1-1@s uk-margin-top uk-text-center uk-light uk-width-expand uk-flex-center" style="margin-top: 20px" uk-grid>
             {% for photo in photos %}
-                <div class="uk-width-auto" data-aos="zoom-in" data-aos-duration="1500">
+                <div class="uk-width-auto" uk-scrollspy="cls:uk-animation-scale-up; delay: 500;">
                     <div style="border: 4px solid white; padding: 10px;" class="uk-card uk-card-body uk-text-emphasis">
                         <img style="border: 4px solid white; object-fit:cover; width: 320px; height: 180px" src="{{ photo.source.url }}" >
                     </div>
@@ -42,21 +42,21 @@
             {% endfor %}
         </div>
 
-        <div class="uk-container uk-text-center uk-margin-bottom uk-light uk-margin-top" data-aos="zoom-in" data-aos-duration="1500">
+        <div class="uk-container uk-text-center uk-margin-bottom uk-light uk-margin-top" uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;">
             <a class="uk-button uk-button-default uk-margin-top" href="/gallery" target="_blank">SEE MORE</a>
         </div>
 
     {% endif %}
 
-    <h3 data-aos="zoom-in" data-aos-duration="1500" class="uk-light uk-text-center" style="margin-bottom: 5px" id="services">MY SERVICES</h3>
-    <div data-aos="zoom-in" data-aos-duration="1500" style="background: white; width: 60px; height: 2px; margin: auto"></div>
+    <h3 uk-scrollspy="cls:uk-animation-slide-right-medium; delay: 500;" class="uk-light uk-text-center" style="margin-bottom: 5px" id="services">MY SERVICES</h3>
+    <div uk-scrollspy="cls:uk-animation-scale-up; delay: 500;" style="background: white; width: 60px; height: 2px; margin: auto"></div>
 
             {% if services %}
 
                 <div class="uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-4@l uk-margin uk-text-center uk-light uk-width-expand uk-flex-center" uk-grid>
 
                     {% for service in services %}
-                        <div data-aos="zoom-in" data-aos-duration="1500">
+                        <div uk-scrollspy="cls:uk-animation-scale-up; delay: 500;">
                             <div style="border: 5px solid white; padding: 20px;" class="service uk-card uk-card-large uk-card-body uk-text-emphasis">
                                 <p style="font-size: 3em">{{ service.icon.as_html }}</p>
                                 <p style="margin-bottom: 5px">{{ service.title }}</p>
@@ -81,13 +81,13 @@
             {% endif %}
 
             {% if brands %}
-                <h3 class="uk-light uk-text-center uk-margin-large-top" style="margin-bottom: 5px" data-aos="zoom-in" data-aos-duration="1500" >BRANDS I'VE WORKED WITH</h3>
-                <div style="background: white; width: 60px; height: 2px; margin: auto " class="uk-margin-medium-bottom" data-aos="zoom-in" data-aos-duration="1500" ></div>
+                <h3 class="uk-light uk-text-center uk-margin-large-top" style="margin-bottom: 5px" uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;" >BRANDS I'VE WORKED WITH</h3>
+                <div style="background: white; width: 60px; height: 2px; margin: auto " class="uk-margin-medium-bottom" uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;"></div>
 
 
                 <div class="uk-child-width-1-3@l uk-child-width-1-2@m uk-margin-top uk-text-center uk-light uk-width-expand uk-flex-center" style="margin-top: 20px" uk-grid>
                     {% for brand in brands %}
-                        <div class="uk-width-auto" data-aos="zoom-in" data-aos-duration="1500">
+                        <div class="uk-width-auto" uk-scrollspy="cls:uk-animation-scale-up; delay: 500;">
                             <div class="uk-card uk-card-body uk-text-emphasis">
                                 <img style="object-fit:cover; width: 320px; height: 180px" src="{{ brand.source.url }}" >
                             </div>
@@ -97,10 +97,10 @@
 
             {% endif %}
 
-            <h3 data-aos="zoom-in" data-aos-duration="1500" class="uk-light uk-text-center" style="margin-bottom: 5px" id="contact">CONTACT ME</h3>
-            <div data-aos="zoom-in" data-aos-duration="1500" style="background: white; width: 60px; height: 2px; margin: auto"></div>
+            <h3 uk-scrollspy="cls:uk-animation-slide-top; delay: 500;" class="uk-light uk-text-center" style="margin-bottom: 5px" id="contact">CONTACT ME</h3>
+            <div uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;" style="background: white; width: 60px; height: 2px; margin: auto"></div>
 
-            <form data-aos="fade-right" data-aos-duration="1500" style="margin-top: 30px; margin-bottom: 30px" class="uk-container uk-width-1-2@s" method="post" action="/contact">
+            <form uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;" style="margin-top: 30px; margin-bottom: 30px" class="uk-container uk-width-1-2@s" method="post" action="/contact">
                 {% csrf_token %}
                 <fieldset class="uk-fieldset">
                     <div class="uk-margin">
