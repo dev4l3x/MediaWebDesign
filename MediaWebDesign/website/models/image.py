@@ -1,7 +1,12 @@
 from django.db import models
 from django.utils.html import mark_safe
+from adminsortable.models import Sortable
 
-class Image(models.Model):
+
+class Image(Sortable):
+    class Meta(Sortable.Meta):
+        pass
+
     source = models.ImageField(upload_to="images/")
     title = models.CharField(max_length=100, default="")
 

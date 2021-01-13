@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'fontawesome_5',
     'dynamic_preferences',
     'django_cleanup.apps.CleanupConfig',
+    'adminsortable',
     # comment the following line if you don't want to use user preferences
     # 'dynamic_preferences.users.apps.UserPreferencesConfig',
 ]
@@ -131,4 +132,6 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
+DYNAMIC_PREFERENCES = {
+    'ENABLE_CACHE': False,
+}

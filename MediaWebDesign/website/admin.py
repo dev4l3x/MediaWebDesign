@@ -1,8 +1,9 @@
 from django.contrib import admin
 from .models import Language, Video, Image, Service, SocialNetwork, PortfolioImage, Brand, Message, ContactReason
+from adminsortable.admin import SortableAdmin
 
 
-class ImageAdmin(admin.ModelAdmin):
+class ImageAdmin(SortableAdmin):
     list_display = ('title', 'source')
     readonly_fields = ('thumbnail_preview',)
 

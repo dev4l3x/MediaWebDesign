@@ -4,3 +4,4 @@ django-fontawesome-5==1.0.18
 django-dynamic-preferences==1.10.1
 python-decouple==3.4
 django_cleanup==5.1.0
+django-admin-sortable==2.2.3

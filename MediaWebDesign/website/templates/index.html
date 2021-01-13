@@ -31,8 +31,16 @@
             <script  type="text/javascript" src="https://cdn.jsdelivr.net/npm/nanogallery2@3/dist/jquery.nanogallery2.min.js"></script>
 
         <style>
-            html {
+            .background{
                 background-image: url('media/{{ global_preferences.general__Background }}');
+                background-size: cover;
+                background-position: center;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                z-index: -3;
             }
         </style>
     </head>
@@ -40,6 +48,7 @@
         <script>
             AOS.init();
         </script>
+        <div class="background"></div>
         <div class="foreground"></div>
         <div class="uk-container uk-width-expand uk-light" style="z-index: 1">
             

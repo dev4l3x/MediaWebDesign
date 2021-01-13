@@ -53,7 +53,7 @@
 
             {% if services %}
 
-                <div class="uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-4@l uk-margin uk-text-center uk-light uk-width-expand uk-flex-center" uk-grid>
+                <div class="uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-4@l uk-margin uk-text-center uk-light uk-width-expand uk-flex-center" uk-height-match="target: > div > .uk-card" uk-grid>
 
                     {% for service in services %}
                         <div uk-scrollspy="cls:uk-animation-scale-up; delay: 500;">
@@ -61,7 +61,7 @@
                                 <p style="font-size: 3em">{{ service.icon.as_html }}</p>
                                 <p style="margin-bottom: 5px">{{ service.title }}</p>
                                 <div style="background: white; width: 60px; height: 2px; margin: auto"></div>
-                                <p class="uk-text-center uk-text-justify">{{ service.description }}</p>
+                                <p class="uk-text-center">{{ service.description }}</p>
                                 {% if service.has_video %}
                                     <div  width="220" height="158">
                                     <iframe width="220" height="158"
