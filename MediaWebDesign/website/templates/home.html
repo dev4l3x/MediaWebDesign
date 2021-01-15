@@ -141,13 +141,13 @@
         {% csrf_token %}
         <fieldset class="uk-fieldset">
             <div class="uk-margin">
-                <input type="text" class="uk-input" placeholder="Name" name="name">
+                <input type="text" class="uk-input" placeholder="Nombre" name="name">
             </div>
             <div class="uk-margin">
                 <input type="text" class="uk-input" placeholder="Email" name="email">
             </div>
             <div class="uk-margin">
-                <select type="text" class="uk-select" placeholder="Contact reason" name="reason">
+                <select type="text" class="uk-select" placeholder="Motivo de contacto" name="reason">
                     {% for contact in contact_reasons %}
                         <option>{{ contact.title }}</option>
                     {% endfor %}
@@ -155,11 +155,11 @@
                 </select>
             </div>
             <div class="uk-margin">
-                <textarea type="text" class="uk-textarea uk-height-small" placeholder="Message" name="message"></textarea>
+                <textarea type="text" class="uk-textarea uk-height-small" placeholder="Mensaje" name="message"></textarea>
             </div>
 
             <div class="uk-text-center">
-                <input type="submit" class="uk-button uk-button-default uk-light" value="SEND"/>
+                <input type="submit" class="uk-button uk-button-default uk-light" value="ENVIAR"/>
             </div>
 
         </fieldset>
