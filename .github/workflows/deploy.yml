@@ -31,8 +31,8 @@ jobs:
            whoami
            git fetch
            git pull
-           pip install -r requirements.txt
-           python MediaWebDesign/manage.py makemigrations
-           python MediaWebDesign/manage.py migrate
+           /home/alpereiras/bin/pip install -r requirements.txt
+           /home/alpereiras/bin/python MediaWebDesign/manage.py makemigrations
+           /home/alpereiras/bin/python MediaWebDesign/manage.py migrate
            ../restart.sh
        
