@@ -27,6 +27,7 @@ jobs:
 
           script: |
            cd ~/MediaWebDesign
+           whoami
            git fetch
            git pull
            pip install -r requirements.txt
