@@ -34,5 +34,4 @@ jobs:
            /home/alpereiras/bin/pip install -r requirements.txt
            /home/alpereiras/bin/python MediaWebDesign/manage.py makemigrations
            /home/alpereiras/bin/python MediaWebDesign/manage.py migrate
-           ../restart.sh
        
