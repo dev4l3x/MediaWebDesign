@@ -7,7 +7,10 @@
         <div style="background: white; width: 60px; height: 2px; margin: auto " class="uk-margin-medium-bottom"></div>
 
 
-        <div uk-scrollspy="target: > div; cls: uk-animation-scale-up; delay: 200" class="uk-child-width-1-3@l uk-child-width-1-3@m uk-child-width-1-1@s uk-margin-top uk-text-center uk-light uk-flex-center uk-width-expand" style="margin-top: 20px" uk-grid>
+        <div uk-scrollspy="target: > div; cls: uk-animation-scale-up; delay: 200"
+             class="uk-child-width-1-3@l uk-child-width-1-3@m uk-child-width-1-1@s
+                    uk-margin-top uk-text-center uk-light uk-flex-center uk-width-expand"
+             style="margin-top: 20px" uk-grid>
 
             {% for video in videos %}
                 <div>
@@ -22,9 +25,15 @@
             {% endfor %}
 
         </div>
-        <div class="uk-container uk-text-center uk-margin-bottom uk-light uk-margin-top">
+        <div class="uk-container uk-text-center
+                    uk-margin-bottom uk-light uk-margin-top">
             <h5 style="display: inline; vertical-align: middle" class="uk-margin-right">See more on </h5>
-            <a class="social_link uk-margin-right" target="_blank" style="vertical-align: middle" href="https://www.youtube.com/channel/UCWySpCerULfx_Pq72eQtjIg"><i class="fab fa-youtube"></i></a>
+            <a class="social_link uk-margin-right"
+               target="_blank"
+               style="vertical-align: middle"
+               href="https://www.youtube.com/channel/UCWySpCerULfx_Pq72eQtjIg">
+                    <i class="fab fa-youtube"></i>
+            </a>
         </div>
     {% endif %}
     {% if photos %}
@@ -32,7 +41,9 @@
         <div style="background: white; width: 60px; height: 2px; margin: auto " class="uk-margin-medium-bottom"></div>
 
 
-        <div class="uk-child-width-1-3@l uk-child-width-1-2@m uk-child-width-1-1@s uk-margin-top uk-text-center uk-light uk-width-expand uk-flex-center" style="margin-top: 20px" uk-grid>
+        <div class="uk-child-width-1-3@l uk-child-width-1-2@m uk-child-width-1-1@s
+                    uk-margin-top uk-text-center uk-light uk-width-expand uk-flex-center"
+             style="margin-top: 20px" uk-grid>
             {% for photo in photos %}
                 <div class="uk-width-auto" uk-scrollspy="cls:uk-animation-scale-up; delay: 500;">
                     <div class="uk-card uk-card-body uk-text-emphasis">
@@ -42,96 +53,126 @@
             {% endfor %}
         </div>
 
-        <div class="uk-container uk-text-center uk-margin-bottom uk-light uk-margin-top" uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;">
+        <div class="uk-container uk-text-center uk-margin-bottom
+                    uk-light uk-margin-top"
+             uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;">
             <a class="uk-button uk-button-default uk-margin-top" href="/gallery" target="_blank">SEE MORE</a>
         </div>
 
     {% endif %}
 
-    <h3 uk-scrollspy="cls:uk-animation-slide-right-medium; delay: 500;" class="uk-light uk-text-center" style="margin-bottom: 5px" id="services">MY SERVICES</h3>
+    <h3 uk-scrollspy="cls:uk-animation-slide-right-medium; delay: 500;"
+        class="uk-light uk-text-center"
+        style="margin-bottom: 5px"
+        id="services">
+            MY SERVICES
+    </h3>
     <div uk-scrollspy="cls:uk-animation-scale-up; delay: 500;" style="background: white; width: 60px; height: 2px; margin: auto"></div>
 
-            {% if services %}
+    {% if services %}
 
-                <div class="uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-4@l uk-margin uk-text-center uk-light uk-width-expand uk-flex-center" uk-height-match="target: > div > .uk-card" uk-grid>
+    <div class="uk-child-width-1-3@m uk-child-width-1-2@s uk-child-width-1-4@l
+                uk-margin uk-text-center uk-light uk-width-expand uk-flex-center"
+         uk-height-match="target: > div > .uk-card" uk-grid>
 
-                    {% for service in services %}
-                        <div uk-scrollspy="cls:uk-animation-scale-up; delay: 500;">
-                            <div style="background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 10px" class="service uk-card uk-card-large uk-card-body uk-text-emphasis">
-                                <p style="font-size: 3em">{{ service.icon.as_html }}</p>
-                                <p style="margin-bottom: 5px">{{ service.title }}</p>
-                                <div style="background: white; width: 60px; height: 2px; margin: auto"></div>
-                                <p class="uk-text-center">{{ service.description }}</p>
-                                {% if service.has_video %}
-                                    <div  width="220" height="158">
-                                    <iframe width="220" height="158"
-                                    src="{{ service.demo_video }}" allowfullscreen>
-                                    </iframe>
-                                    </div>
-                                {% endif %}
-                                {%if service.has_price %}
-                                <h2>{{ service.price }}</h2>
-                                {%endif%}
-                            </div>
+        {% for service in services %}
+            <div uk-scrollspy="cls:uk-animation-scale-up; delay: 500;">
+                <div style="background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 10px"
+                     class="service uk-card uk-card-large uk-card-body uk-text-emphasis">
+                    <p style="font-size: 3em">{{ service.icon.as_html }}</p>
+                    <p style="margin-bottom: 5px">{{ service.title }}</p>
+                    <div style="background: white; width: 60px; height: 2px; margin: auto"></div>
+                    <p class="uk-text-center">{{ service.description }}</p>
+                    {% if service.has_video %}
+                        <div  width="220" height="158">
+                        <iframe width="220" height="158"
+                        src="{{ service.demo_video }}" allowfullscreen>
+                        </iframe>
                         </div>
-                    {% endfor %}
-
+                    {% endif %}
+                    {%if service.has_price %}
+                    <h2>{{ service.price }}</h2>
+                    {%endif%}
                 </div>
+            </div>
+        {% endfor %}
 
-            {% endif %}
+    </div>
 
-            {% if brands %}
-                <h3 class="uk-light uk-text-center uk-margin-large-top" style="margin-bottom: 5px" uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;" >BRANDS I'VE WORKED WITH</h3>
-                <div style="background: white; width: 60px; height: 2px; margin: auto " class="uk-margin-medium-bottom" uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;"></div>
+    {% endif %}
 
 
-                <div class="uk-child-width-1-3@l uk-child-width-1-2@m uk-margin-top uk-text-center uk-light uk-width-expand uk-flex-center" style="margin-top: 20px" uk-grid>
-                    {% for brand in brands %}
-                        <div class="uk-width-auto" uk-scrollspy="cls:uk-animation-scale-up; delay: 500;">
-                            <div class="uk-card uk-card-body uk-text-emphasis">
-                                <img style="object-fit: contain; width: 320px; height: 180px" src="{{ brand.source.url }}" >
-                            </div>
-                        </div>
-                    {% endfor %}
+    {% if brands %}
+        <h3 class="uk-light uk-text-center uk-margin-large-top"
+            style="margin-bottom: 5px"
+            uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;" >
+                BRANDS I'VE WORKED WITH
+        </h3>
+        <div style="background: white; width: 60px; height: 2px; margin: auto "
+             class="uk-margin-medium-bottom" uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;"></div>
+
+
+        <div class="uk-child-width-1-3@l uk-child-width-1-2@m uk-margin-top
+                    uk-text-center uk-light uk-width-expand uk-flex-center"
+             style="margin-top: 20px" uk-grid>
+            {% for brand in brands %}
+                <div class="uk-width-auto" uk-scrollspy="cls:uk-animation-scale-up; delay: 500;">
+                    <div class="uk-card uk-card-body uk-text-emphasis">
+                        <img style="object-fit: contain; width: 320px; height: 180px" src="{{ brand.source.url }}" >
+                    </div>
                 </div>
+            {% endfor %}
+        </div>
 
-            {% endif %}
+    {% endif %}
 
-            <h3 uk-scrollspy="cls:uk-animation-slide-top; delay: 500;" class="uk-light uk-text-center" style="margin-bottom: 5px" id="contact">CONTACT ME</h3>
-            <div uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;" style="background: white; width: 60px; height: 2px; margin: auto"></div>
+    <h3 uk-scrollspy="cls:uk-animation-slide-top; delay: 500;"
+        class="uk-light uk-text-center"
+        style="margin-bottom: 5px" id="contact">
+            CONTACT ME
+    </h3>
+    <div uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;" style="background: white; width: 60px; height: 2px; margin: auto"></div>
 
-            <form uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;" style="margin-top: 30px; margin-bottom: 30px" class="uk-container uk-width-1-2@s" method="post" action="/contact">
-                {% csrf_token %}
-                <fieldset class="uk-fieldset">
-                    <div class="uk-margin">
-                        <input type="text" class="uk-input" placeholder="Name" name="name">
-                    </div>
-                    <div class="uk-margin">
-                        <input type="text" class="uk-input" placeholder="Email" name="email">
-                    </div>
-                    <div class="uk-margin">
-                        <select type="text" class="uk-select" placeholder="Contact reason" name="reason">
-                            {% for contact in contact_reasons %}
-                                <option>{{ contact.title }}</option>
-                            {% endfor %}
-                            <option>Otro</option>
-                        </select>
-                    </div>
-                    <div class="uk-margin">
-                        <textarea type="text" class="uk-textarea uk-height-small" placeholder="Message" name="message"></textarea>
-                    </div>
+    <form uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;"
+          style="margin-top: 30px; margin-bottom: 30px"
+          class="uk-container uk-width-1-2@s"
+          method="post"
+          action="/contact">
+        {% csrf_token %}
+        <fieldset class="uk-fieldset">
+            <div class="uk-margin">
+                <input type="text" class="uk-input" placeholder="Name" name="name">
+            </div>
+            <div class="uk-margin">
+                <input type="text" class="uk-input" placeholder="Email" name="email">
+            </div>
+            <div class="uk-margin">
+                <select type="text" class="uk-select" placeholder="Contact reason" name="reason">
+                    {% for contact in contact_reasons %}
+                        <option>{{ contact.title }}</option>
+                    {% endfor %}
+                    <option>Otro</option>
+                </select>
+            </div>
+            <div class="uk-margin">
+                <textarea type="text" class="uk-textarea uk-height-small" placeholder="Message" name="message"></textarea>
+            </div>
 
-                    <div class="uk-text-center">
-                        <input type="submit" class="uk-button uk-button-default uk-light" value="SEND"/>
-                    </div>
+            <div class="uk-text-center">
+                <input type="submit" class="uk-button uk-button-default uk-light" value="SEND"/>
+            </div>
 
-                </fieldset>
-            </form>
+        </fieldset>
+    </form>
 
         {% if networks %}
             <div class="uk-container uk-text-center uk-margin-bottom" > 
                 {% for network in networks %}
-                    <a class="social_link uk-margin-right" target="_blank" href="{{ network.link }}">{{ network.icon.as_html }}</a>
+                    <a class="social_link uk-margin-right"
+                       target="_blank"
+                       href="{{ network.link }}">
+                            {{ network.icon.as_html }}
+                    </a>
                 {% endfor %}
             </div>
         {% endif %}

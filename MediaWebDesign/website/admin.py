@@ -13,6 +13,7 @@ class ImageAdmin(SortableAdmin):
     thumbnail_preview.short_description = 'Preview'
     thumbnail_preview.allow_tags = True
 
+
 class BrandAdmin(admin.ModelAdmin):
     list_display = ('name', 'source')
     readonly_fields = ('thumbnail_preview',)
@@ -33,6 +34,7 @@ class MessageAdmin(admin.ModelAdmin):
 
     thumbnail_preview.short_description = 'Preview'
     thumbnail_preview.allow_tags = True
+
 
 # Register your models here.
 admin.site.register(Language)
