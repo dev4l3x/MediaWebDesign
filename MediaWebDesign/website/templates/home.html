@@ -27,7 +27,7 @@
         </div>
         <div class="uk-container uk-text-center
                     uk-margin-bottom uk-light uk-margin-top">
-            <h5 style="display: inline; vertical-align: middle" class="uk-margin-right">See more on </h5>
+            <h5 style="display: inline; vertical-align: middle" class="uk-margin-right">Ver más en </h5>
             <a class="social_link uk-margin-right"
                target="_blank"
                style="vertical-align: middle"
@@ -37,7 +37,7 @@
         </div>
     {% endif %}
     {% if photos %}
-        <h3 class="uk-light uk-text-center uk-margin-large-top" style="margin-bottom: 5px">PICTURES</h3>
+        <h3 class="uk-light uk-text-center uk-margin-large-top" style="margin-bottom: 5px">PORTFOLIO</h3>
         <div style="background: white; width: 60px; height: 2px; margin: auto " class="uk-margin-medium-bottom"></div>
 
 
@@ -56,7 +56,7 @@
         <div class="uk-container uk-text-center uk-margin-bottom
                     uk-light uk-margin-top"
              uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;">
-            <a class="uk-button uk-button-default uk-margin-top" href="/gallery" target="_blank">SEE MORE</a>
+            <a class="uk-button uk-button-default uk-margin-top" href="/gallery" target="_blank">VER MÁS</a>
         </div>
 
     {% endif %}
@@ -65,7 +65,7 @@
         class="uk-light uk-text-center"
         style="margin-bottom: 5px"
         id="services">
-            MY SERVICES
+            MIS SERVICIOS
     </h3>
     <div uk-scrollspy="cls:uk-animation-scale-up; delay: 500;" style="background: white; width: 60px; height: 2px; margin: auto"></div>
 
@@ -106,7 +106,7 @@
         <h3 class="uk-light uk-text-center uk-margin-large-top"
             style="margin-bottom: 5px"
             uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;" >
-                BRANDS I'VE WORKED WITH
+                MARCAS QUE CONFÍAN EN MIS SERVICIOS
         </h3>
         <div style="background: white; width: 60px; height: 2px; margin: auto "
              class="uk-margin-medium-bottom" uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;"></div>
@@ -129,7 +129,7 @@
     <h3 uk-scrollspy="cls:uk-animation-slide-top; delay: 500;"
         class="uk-light uk-text-center"
         style="margin-bottom: 5px" id="contact">
-            CONTACT ME
+            CONTÁCTAME
     </h3>
     <div uk-scrollspy="cls:uk-animation-slide-left-medium; delay: 500;" style="background: white; width: 60px; height: 2px; margin: auto"></div>
 
@@ -141,13 +141,13 @@
         {% csrf_token %}
         <fieldset class="uk-fieldset">
             <div class="uk-margin">
-                <input type="text" class="uk-input" placeholder="Name" name="name">
+                <input type="text" class="uk-input" placeholder="Nombre" name="name">
             </div>
             <div class="uk-margin">
                 <input type="text" class="uk-input" placeholder="Email" name="email">
             </div>
             <div class="uk-margin">
-                <select type="text" class="uk-select" placeholder="Contact reason" name="reason">
+                <select type="text" class="uk-select" placeholder="Motivo de contacto" name="reason">
                     {% for contact in contact_reasons %}
                         <option>{{ contact.title }}</option>
                     {% endfor %}
@@ -155,11 +155,11 @@
                 </select>
             </div>
             <div class="uk-margin">
-                <textarea type="text" class="uk-textarea uk-height-small" placeholder="Message" name="message"></textarea>
+                <textarea type="text" class="uk-textarea uk-height-small" placeholder="Mensaje" name="message"></textarea>
             </div>
 
             <div class="uk-text-center">
-                <input type="submit" class="uk-button uk-button-default uk-light" value="SEND"/>
+                <input type="submit" class="uk-button uk-button-default uk-light" value="ENVIAR"/>
             </div>
 
         </fieldset>

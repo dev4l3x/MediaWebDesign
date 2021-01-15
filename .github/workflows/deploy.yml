@@ -12,25 +12,26 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   deploy:
+    name: Deploy
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Deploy django app
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: appleboy/ssh-action@0.1.2
-      - with:
+        uses: appleboy/ssh-action@master
+        with:
           host: ${{secrets.SSH_HOST}}
-          key: ${{secrets.SSH_KEY}}
           username: ${{secrets.SSH_USERNAME}}
+          password: ${{secrets.SSH_PASSWORD}}
 
           script: |
+           source ~/.bashrc
            cd ~/MediaWebDesign
+           whoami
            git fetch
            git pull
-           pip install -r requirements.txt
-           python MediaWebDesign/manage.py makemigrations
-           python MediaWebDesign/manage.py migrate
-           ../restart.sh
+           /home/alpereiras/bin/pip install -r requirements.txt
+           /home/alpereiras/bin/python MediaWebDesign/manage.py makemigrations
+           /home/alpereiras/bin/python MediaWebDesign/manage.py migrate
        
