@@ -19,8 +19,8 @@ jobs:
     steps:
       - name: Deploy django app
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: appleboy/ssh-action@0.1.2
-      - with:
+        uses: appleboy/ssh-action@0.1.2
+        with:
           host: ${{secrets.SSH_HOST}}
           key: ${{secrets.SSH_KEY}}
           username: ${{secrets.SSH_USERNAME}}
