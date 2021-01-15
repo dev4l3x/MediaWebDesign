@@ -26,8 +26,7 @@ jobs:
           password: ${{secrets.SSH_PASSWORD}}
 
           script: |
-           export NVM_DIR=~/.nvm
-           source ~/.nvm/nvm.sh
+           source ~/.bashrc
            cd ~/MediaWebDesign
            whoami
            git fetch
