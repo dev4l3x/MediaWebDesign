@@ -41,16 +41,25 @@
         <div style="background: white; width: 60px; height: 2px; margin: auto " class="uk-margin-medium-bottom"></div>
 
 
-        <div class="uk-child-width-1-3@l uk-child-width-1-2@m uk-child-width-1-1@s
-                    uk-margin-top uk-text-center uk-light uk-width-expand uk-flex-center"
-             style="margin-top: 20px" uk-grid>
-            {% for photo in photos %}
-                <div class="uk-width-auto" uk-scrollspy="cls:uk-animation-scale-up; delay: 500;">
-                    <div class="uk-card uk-card-body uk-text-emphasis">
-                        <img style="object-fit:cover; width: 320px; height: 180px" src="{{ photo.source.url }}" >
+
+        <div class="uk-position-relative uk-visible-toggle uk-light uk-margin-large-top uk-margin-large-bottom"
+             tabindex="-1"
+             uk-slider="center: true;">
+
+            <ul class="uk-child-width-1-4@l uk-child-width-1-3@m uk-child-width-1-1@s uk-slider-items uk-grid uk-width-expand ">
+                {% for photo in photos %}
+                    <div class="uk-panel">
+                        <img style="object-fit:cover; height: 200px; width: 100%"
+                         class="uk-align-center"
+                         src="{{ photo.source.url }}" />
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </ul>
+
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover"
+               href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover"
+               href="#" uk-slidenav-next uk-slider-item="next"></a>
         </div>
 
         <div class="uk-container uk-text-center uk-margin-bottom
