@@ -79,3 +79,24 @@ class GalleryLogo(FilePreference):
                     shutil.rmtree(file_path)
             except Exception as e:
                 print('Failed to delete %s. Reason: %s' % (file_path, e))
+
+
+@global_preferences_registry.register
+class ShareImage(FilePreference):
+    section = general
+    name = 'ShareImage'
+    verbose_name = 'Share logo'
+
+    def validate(self, value):
+        folder = os.path.join(settings.MEDIA_ROOT, 'dynamic_preferences', 'general__ShareImage')
+        if not os.path.isdir(folder):
+            return
+        for filename in os.listdir(folder):
+            file_path = os.path.join(folder, filename)
+            try:
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                print('Failed to delete %s. Reason: %s' % (file_path, e))
